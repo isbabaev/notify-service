@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { TelegramModule } from './telegram/telegram.module';
+import { TelegramBotServiceModule } from './telegram-bot-service/telegram-bot-service.module';
 
 @Module({
   imports: [
-    TelegramModule.forRoot(),
+    TelegramBotServiceModule,
   ],
 })
 export class NotifyServicesModule {
