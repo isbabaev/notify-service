@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { NotifyServicesModule } from './modules/notify-services/notify-services.module';
+import { DomainsDiModule } from './domains/domains-di.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    NotifyServicesModule,
+    DomainsDiModule,
   ],
   controllers: [],
   providers: [],

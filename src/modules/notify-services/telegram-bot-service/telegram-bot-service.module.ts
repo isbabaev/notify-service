@@ -1,5 +1,10 @@
-import { Module } from '@nestjs/common';
+import { Module, Provider } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { TelegramBotService } from './services/telegram-bot.service';
+
+const providers: Provider[] = [
+  TelegramBotService
+];
 
 @Module({
   imports: [
@@ -16,6 +21,8 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         },
       },
     ]),
-  ]
+  ],
+  providers,
+  exports: [...providers],
 })
 export class TelegramBotServiceModule {}
